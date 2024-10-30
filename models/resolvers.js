@@ -1,9 +1,9 @@
-const { User } = require('../models');
-const jwt = require('jsonwebtoken');
+// models/userResolvers.js
+const { User } = require('./User'); // Adjust path as necessary
 const { AuthenticationError } = require('apollo-server-express');
-const { signToken } = require('../utils/auth'); 
+const { signToken } = require('../utils/auth');
 
-const resolvers = {
+const userResolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
@@ -57,4 +57,4 @@ const resolvers = {
   },
 };
 
-module.exports = resolvers;
+module.exports = userResolvers;
